@@ -6,7 +6,7 @@ go:
   - 1.7
   - tip
 
-go_import_path: github.com/dnaeon/go-vcr
+go_import_path: github.com/jhaynie/go-vcr
 
 before_install:
 - go get github.com/modocache/gover

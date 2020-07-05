@@ -26,7 +26,6 @@ package cassette
 
 import (
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -134,10 +133,9 @@ type Cassette struct {
 }
 
 // New creates a new empty cassette
-func New(name string) *Cassette {
+func New(filename string) *Cassette {
 	c := &Cassette{
-		Name:         name,
-		File:         fmt.Sprintf("%s.yaml", name),
+		File:         filename,
 		Version:      cassetteFormatV1,
 		Interactions: make([]*Interaction, 0),
 		Matcher:      DefaultMatcher,
@@ -148,8 +146,8 @@ func New(name string) *Cassette {
 }
 
 // Load reads a cassette file from disk
-func Load(name string) (*Cassette, error) {
-	c := New(name)
+func Load(filename string) (*Cassette, error) {
+	c := New(filename)
 	data, err := ioutil.ReadFile(c.File)
 	if err != nil {
 		return nil, err

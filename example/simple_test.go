@@ -31,7 +31,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/dnaeon/go-vcr/recorder"
+	"github.com/jhaynie/go-vcr/recorder"
 )
 
 func TestSimple(t *testing.T) {

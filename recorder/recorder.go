@@ -28,7 +28,6 @@ package recorder
 import (
 	"bufio"
 	"bytes"
-	"fmt"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -37,7 +36,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/dnaeon/go-vcr/cassette"
+	"github.com/jhaynie/go-vcr/cassette"
 )
 
 // Mode represents recording/playback mode
@@ -148,26 +147,25 @@ func requestHandler(r *http.Request, c *cassette.Cassette, mode Mode, realTransp
 }
 
 // New creates a new recorder
-func New(cassetteName string) (*Recorder, error) {
+func New(cassetteFile string) (*Recorder, error) {
 	// Default mode is "replay" if file exists
-	return NewAsMode(cassetteName, ModeReplaying, nil)
+	return NewAsMode(cassetteFile, ModeReplaying, nil)
 }
 
 // NewAsMode creates a new recorder in the specified mode
-func NewAsMode(cassetteName string, mode Mode, realTransport http.RoundTripper) (*Recorder, error) {
+func NewAsMode(cassetteFile string, mode Mode, realTransport http.RoundTripper) (*Recorder, error) {
 	var c *cassette.Cassette
-	cassetteFile := fmt.Sprintf("%s.yaml", cassetteName)
 
 	if mode != ModeDisabled {
 		// Depending on whether the cassette file exists or not we
 		// either create a new empty cassette or load from file
 		if _, err := os.Stat(cassetteFile); os.IsNotExist(err) || mode == ModeRecording {
 			// Create new cassette and enter in recording mode
-			c = cassette.New(cassetteName)
+			c = cassette.New(cassetteFile)
 			mode = ModeRecording
 		} else {
 			// Load cassette from file and enter replay mode
-			c, err = cassette.Load(cassetteName)
+			c, err = cassette.Load(cassetteFile)
 			if err != nil {
 				return nil, err
 			}

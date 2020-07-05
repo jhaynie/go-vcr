@@ -1,8 +1,8 @@
 ## go-vcr
 
 [![Build Status](https://travis-ci.org/dnaeon/go-vcr.svg)](https://travis-ci.org/dnaeon/go-vcr)
-[![GoDoc](https://godoc.org/github.com/dnaeon/go-vcr?status.svg)](https://godoc.org/github.com/dnaeon/go-vcr)
-[![Go Report Card](https://goreportcard.com/badge/github.com/dnaeon/go-vcr)](https://goreportcard.com/report/github.com/dnaeon/go-vcr)
+[![GoDoc](https://godoc.org/github.com/jhaynie/go-vcr?status.svg)](https://godoc.org/github.com/jhaynie/go-vcr)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jhaynie/go-vcr)](https://goreportcard.com/report/github.com/jhaynie/go-vcr)
 [![codecov](https://codecov.io/gh/dnaeon/go-vcr/branch/master/graph/badge.svg)](https://codecov.io/gh/dnaeon/go-vcr)
 
 `go-vcr` simplifies testing by recording your HTTP interactions and
@@ -11,12 +11,16 @@ and accurate testing of your code.
 
 `go-vcr` was inspired by the [VCR library for Ruby](https://github.com/vcr/vcr).
 
+## FORK
+
+This is a fork from the original repo which changes to the requirement to take a full path to the cassette file. All changes relicensed under the same license as the original.
+
 ## Installation
 
 Install `go-vcr` by executing the command below:
 
 ```bash
-$ go get github.com/dnaeon/go-vcr/recorder
+$ go get github.com/jhaynie/go-vcr/recorder
 ```
 
 ## Usage
@@ -34,7 +38,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/dnaeon/go-vcr/recorder"
+	"github.com/jhaynie/go-vcr/recorder"
 
 	"github.com/coreos/etcd/client"
 	"golang.org/x/net/context"
