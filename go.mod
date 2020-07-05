@@ -1,4 +1,4 @@
-module github.com/jhaynie/go-vcr
+module github.com/jhaynie/go-vcr/v2
 
 go 1.14
 
