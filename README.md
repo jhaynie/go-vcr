@@ -20,7 +20,7 @@ This is a fork from the original repo which changes to the requirement to take a
 Install `go-vcr` by executing the command below:
 
 ```bash
-$ go get github.com/jhaynie/go-vcr/recorder
+$ go get github.com/jhaynie/go-vcr/v2/recorder
 ```
 
 ## Usage
@@ -38,8 +38,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/jhaynie/go-vcr/recorder"
-
+	"github.com/jhaynie/go-vcr/v2/recorder"
 	"github.com/coreos/etcd/client"
 	"golang.org/x/net/context"
 )

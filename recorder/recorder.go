@@ -36,7 +36,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/jhaynie/go-vcr/cassette"
+	"github.com/jhaynie/go-vcr/v2/cassette"
 )
 
 // Mode represents recording/playback mode

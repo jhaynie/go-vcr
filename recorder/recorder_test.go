@@ -26,6 +26,7 @@
 package recorder_test
 
 import (
+	"bytes"
 	"context"
 	"fmt"
 	"io"
@@ -39,10 +40,8 @@ import (
 	"testing"
 	"time"
 
-	"bytes"
-
-	"github.com/jhaynie/go-vcr/cassette"
-	"github.com/jhaynie/go-vcr/recorder"
+	"github.com/jhaynie/go-vcr/v2/cassette"
+	"github.com/jhaynie/go-vcr/v2/recorder"
 )
 
 type recordTest struct {
